@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
 final Color kColorWhite = HexColor.fromHex('#FFFFFF');
+final Color kColorSecondaryWhite = HexColor.fromHex('#F0F0F0');
 final Color kColorBlack = HexColor.fromHex('#000000');
 final Color kColorGrey = HexColor.fromHex('#B8B8B8');
 final Color kColorGreyPrimary = HexColor.fromHex('#e1edf0');
 final Color kColorSplash = HexColor.fromHex('#e1edf0');
 final Color kColorSearchIcon = HexColor.fromHex('#FC6A03');
+final Color kColorTeal = HexColor.fromHex('#28a99e');
 
 extension HexColor on Color {
   /// String is in the format "aabbcc" or "ffaabbcc" with an optional leading "#".

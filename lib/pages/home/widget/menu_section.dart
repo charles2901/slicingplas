@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:slicing/utilities/asset_constant.dart';
 import 'package:slicing/utilities/colors.dart';
-import 'package:slicing/utilities/textstyle.dart';
+import 'package:slicing/widget/label_icon.dart';
 import 'package:slicing/widget/ripple_inkwell.dart';
 
 class MenuSection extends StatelessWidget {
@@ -12,74 +11,43 @@ class MenuSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 16),
       width: Get.width,
       decoration: BoxDecoration(
         color: kColorWhite,
         borderRadius: BorderRadius.circular(4),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(0.5),
-            spreadRadius: 1,
-            blurRadius: 1,
-            offset: const Offset(0, 1), // changes position of shadow
-          ),
-        ],
       ),
       child: Row(
-        children: [
+        children: const [
           Expanded(
             child: RippleInkWell(
-              child: Column(
-                children: [
-                  SvgPicture.asset(AssetConstant.categories),
-                  const SizedBox(height: 4),
-                  Text(
-                    'Kategori',
-                    style: TStyle.body.copyWith(fontSize: 11),
-                  )
-                ],
+              child: LabelIcon(
+                label: 'Kategori',
+                assetName: AssetConstant.categories,
               ),
             ),
           ),
           Expanded(
             child: RippleInkWell(
-              child: Column(
-                children: [
-                  SvgPicture.asset(AssetConstant.quote),
-                  const SizedBox(height: 4),
-                  Text(
-                    'Quotation',
-                    style: TStyle.body.copyWith(fontSize: 11),
-                  )
-                ],
+              child: LabelIcon(
+                label: 'Quotation',
+                assetName: AssetConstant.quote,
               ),
             ),
           ),
           Expanded(
             child: RippleInkWell(
-              child: Column(
-                children: [
-                  SvgPicture.asset(AssetConstant.favorites),
-                  const SizedBox(height: 4),
-                  Text(
-                    'Favorit',
-                    style: TStyle.body.copyWith(fontSize: 11),
-                  )
-                ],
+              child: LabelIcon(
+                label: 'Favorit',
+                assetName: AssetConstant.favorites,
               ),
             ),
           ),
           Expanded(
             child: RippleInkWell(
-              child: Column(
-                children: [
-                  SvgPicture.asset(AssetConstant.paylater),
-                  const SizedBox(height: 4),
-                  Text(
-                    'Paylater',
-                    style: TStyle.body.copyWith(fontSize: 11),
-                  )
-                ],
+              child: LabelIcon(
+                label: 'Paylater',
+                assetName: AssetConstant.paylater,
               ),
             ),
           ),
