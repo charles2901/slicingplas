@@ -4,11 +4,8 @@ import 'package:get/route_manager.dart';
 import 'package:slicing/pages/home/home_page.dart';
 import 'package:slicing/routes/routes.dart';
 
-void main() {
-  SystemChrome.setSystemUIOverlayStyle(
-    SystemUiOverlayStyle.dark.copyWith(statusBarColor: Colors.transparent),
-  );
-  runApp(MyApp());
+void main() async {
+  Future.delayed(const Duration(milliseconds: 200), () => runApp(MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -21,7 +18,14 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       getPages: routes,
-      home: HomePage(),
+      home: AnnotatedRegion<SystemUiOverlayStyle>(
+          value: const SystemUiOverlayStyle(
+            statusBarColor: Colors.transparent,
+            systemNavigationBarColor: Colors.black, // navigation bar color
+            statusBarIconBrightness: Brightness.dark, // status bar icons' color
+            systemNavigationBarIconBrightness: Brightness.dark,
+          ),
+          child: HomePage()),
     );
   }
 }

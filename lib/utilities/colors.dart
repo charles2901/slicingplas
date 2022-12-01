@@ -6,7 +6,7 @@ final Color kColorBlack = HexColor.fromHex('#000000');
 final Color kColorGrey = HexColor.fromHex('#B8B8B8');
 final Color kColorGreyPrimary = HexColor.fromHex('#e1edf0');
 final Color kColorSplash = HexColor.fromHex('#e1edf0');
-final Color kColorSearchIcon = HexColor.fromHex('#FC6A03');
+final Color kColorActive = HexColor.fromHex('#FC6A03');
 final Color kColorTeal = HexColor.fromHex('#28a99e');
 
 extension HexColor on Color {

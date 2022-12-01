@@ -14,13 +14,23 @@ class MenuSection extends StatelessWidget {
       margin: const EdgeInsets.symmetric(horizontal: 16),
       width: Get.width,
       decoration: BoxDecoration(
-        color: kColorWhite,
-        borderRadius: BorderRadius.circular(4),
-      ),
+          color: kColorWhite,
+          borderRadius: BorderRadius.circular(4),
+          boxShadow: [
+            BoxShadow(
+              color: kColorBlack.withOpacity(0.05),
+              blurRadius: 0.5,
+              offset: const Offset(0, 3),
+            ),
+          ]),
       child: Row(
         children: const [
           Expanded(
             child: RippleInkWell(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(4),
+                bottomLeft: Radius.circular(4),
+              ),
               child: LabelIcon(
                 label: 'Kategori',
                 assetName: AssetConstant.categories,
@@ -29,6 +39,7 @@ class MenuSection extends StatelessWidget {
           ),
           Expanded(
             child: RippleInkWell(
+              borderRadius: BorderRadius.zero,
               child: LabelIcon(
                 label: 'Quotation',
                 assetName: AssetConstant.quote,
@@ -37,6 +48,7 @@ class MenuSection extends StatelessWidget {
           ),
           Expanded(
             child: RippleInkWell(
+              borderRadius: BorderRadius.zero,
               child: LabelIcon(
                 label: 'Favorit',
                 assetName: AssetConstant.favorites,
@@ -45,6 +57,10 @@ class MenuSection extends StatelessWidget {
           ),
           Expanded(
             child: RippleInkWell(
+              borderRadius: BorderRadius.only(
+                topRight: Radius.circular(4),
+                bottomRight: Radius.circular(4),
+              ),
               child: LabelIcon(
                 label: 'Paylater',
                 assetName: AssetConstant.paylater,

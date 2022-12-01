@@ -6,12 +6,10 @@ class RippleInkWell extends StatelessWidget {
   final Widget child;
   final Color? color;
   final BorderRadiusGeometry? borderRadius;
+  final EdgeInsetsGeometry? padding;
 
-  const RippleInkWell({
-    required this.child,
-    this.color,
-    this.borderRadius,
-  });
+  const RippleInkWell(
+      {required this.child, this.color, this.borderRadius, this.padding});
 
   @override
   Widget build(BuildContext context) {
@@ -22,16 +20,18 @@ class RippleInkWell extends StatelessWidget {
         borderRadius: borderRadius ?? BorderRadius.circular(4),
       ),
       child: Material(
-        borderRadius: borderRadius ?? BorderRadius.circular(4),
         color: Colors.transparent,
         child: InkWell(
+          borderRadius: borderRadius != null
+              ? borderRadius as BorderRadius
+              : BorderRadius.circular(4),
           splashFactory: InkRipple.splashFactory,
           onTap: () {},
           child: Container(
             decoration: BoxDecoration(
               borderRadius: borderRadius ?? BorderRadius.circular(4),
             ),
-            padding: const EdgeInsets.all(12),
+            padding: padding ?? const EdgeInsets.all(12),
             child: child,
           ),
         ),

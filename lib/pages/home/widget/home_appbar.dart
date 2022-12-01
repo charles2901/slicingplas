@@ -34,7 +34,7 @@ class HomeAppbar extends StatelessWidget {
                         Icon(
                           Icons.search,
                           size: 15,
-                          color: kColorSearchIcon,
+                          color: kColorActive,
                         ),
                         const SizedBox(width: 4),
                         Text(

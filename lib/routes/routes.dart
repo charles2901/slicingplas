@@ -11,5 +11,6 @@ final routes = [
   GetPage(
     name: RouteName.search,
     page: () => SearchPage(),
+    transitionDuration: const Duration(milliseconds: 500),
   ),
 ];
