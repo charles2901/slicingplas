@@ -15,7 +15,7 @@ class ProductCardRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return RippleInkWell(
       borderRadius: BorderRadius.circular(8),
-      padding: const EdgeInsets.symmetric(vertical: 6),
+      padding: const EdgeInsets.all(0),
       child: SizedBox(
         child: Row(
           children: [

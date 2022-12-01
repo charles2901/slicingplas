@@ -17,32 +17,30 @@ class HomeAppbar extends StatelessWidget {
       child: Row(
         children: [
           Expanded(
-            child: SizedBox(
+            child: GestureDetector(
+              onTap: () => Get.toNamed(RouteName.search),
               child: Hero(
                 tag: 'search',
-                child: GestureDetector(
-                  onTap: () => Get.toNamed(RouteName.search),
-                  child: Container(
-                    padding: const EdgeInsets.all(6),
-                    margin: EdgeInsets.only(right: actions == null ? 0 : 12),
-                    decoration: BoxDecoration(
-                      color: kColorWhite,
-                      borderRadius: BorderRadius.circular(4),
-                    ),
-                    child: Row(
-                      children: [
-                        Icon(
-                          Icons.search,
-                          size: 15,
-                          color: kColorActive,
-                        ),
-                        const SizedBox(width: 4),
-                        Text(
-                          'Cari nama produk, kategori, atau kelas',
-                          style: TStyle.body.copyWith(fontSize: 10.5),
-                        ),
-                      ],
-                    ),
+                child: Container(
+                  padding: const EdgeInsets.all(6),
+                  margin: EdgeInsets.only(right: actions == null ? 0 : 12),
+                  decoration: BoxDecoration(
+                    color: kColorWhite,
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.search,
+                        size: 15,
+                        color: kColorActive,
+                      ),
+                      const SizedBox(width: 4),
+                      Text(
+                        'Cari nama produk, kategori, atau kelas',
+                        style: TStyle.body.copyWith(fontSize: 10.5),
+                      ),
+                    ],
                   ),
                 ),
               ),

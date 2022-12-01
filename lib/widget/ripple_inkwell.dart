@@ -5,15 +5,21 @@ import 'package:slicing/utilities/colors.dart';
 class RippleInkWell extends StatelessWidget {
   final Widget child;
   final Color? color;
+  final Color? splashColor;
   final BorderRadiusGeometry? borderRadius;
   final EdgeInsetsGeometry? padding;
 
-  const RippleInkWell(
-      {required this.child, this.color, this.borderRadius, this.padding});
+  const RippleInkWell({
+    required this.child,
+    this.color,
+    this.borderRadius,
+    this.padding,
+    this.splashColor,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Ink(
       width: Get.width,
       decoration: BoxDecoration(
         color: color ?? kColorWhite,
@@ -26,6 +32,7 @@ class RippleInkWell extends StatelessWidget {
               ? borderRadius as BorderRadius
               : BorderRadius.circular(4),
           splashFactory: InkRipple.splashFactory,
+          splashColor: kColorGrey.withOpacity(0.3),
           onTap: () {},
           child: Container(
             decoration: BoxDecoration(
